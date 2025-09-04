@@ -1,4 +1,5 @@
-﻿#pragma once
+﻿#ifndef PRODUCT_H
+#define PRODUCT_H
 #include <string>
 #include <iostream>
 using namespace std;
@@ -13,3 +14,4 @@ public:
     ~Product();
     double getPrice() const;
 };
+#endif

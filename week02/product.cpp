@@ -1,7 +1,7 @@
-﻿#include "product.h"
+﻿﻿#include "product.h"
 
-Product::Product(string nm, double up)
-	: name(nm), unitPrice(up)
+Product::Product(string name, double unitPrice)
+	: name(name), unitPrice(unitPrice)
 {
 }
 Product::~Product()
