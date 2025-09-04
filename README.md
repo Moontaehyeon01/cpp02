@@ -1,3 +1,4 @@
+'''mermaid
 %%2025년도 2학기 c++ 프로그래밍 수업 원격 리포지토리
 
 
@@ -69,4 +70,4 @@ classDiagram
 &nbsp;   Main --> Invoice : creates
 
 &nbsp;   Main --> Company : includes
-
+'''
