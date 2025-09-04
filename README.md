@@ -1,73 +1,73 @@
-'''mermaid
+```mermaid
 %%2025년도 2학기 c++ 프로그래밍 수업 원격 리포지토리
 
 
 
 classDiagram
 
-&nbsp;   class Company {
+   class Company {
 
-&nbsp;       -string name
+       -string name
 
-&nbsp;       -string telephone
+       -string telephone
 
-&nbsp;       +Company(string name, string telephone)
+       +Company(string name, string telephone)
 
-&nbsp;       +void print() const
+       +void print() const
 
-&nbsp;   }
+   }
 
-&nbsp;   
+   
 
-&nbsp;   class Product {
+   class Product {
 
-&nbsp;       -string name
+       -string name
 
-&nbsp;       -double unitPrice
+       -double unitPrice
 
-&nbsp;       +Product(string name, double unitPrice)
+       +Product(string name, double unitPrice)
 
-&nbsp;       +~Product()
+       +~Product()
 
-&nbsp;       +double getPrice() const
+      +double getPrice() const
 
-&nbsp;   }
+   }
 
-&nbsp;   
+  
 
-&nbsp;   class Invoice {
+   class Invoice {
 
-&nbsp;       -int invoiceNumber
+       -int invoiceNumber
 
-&nbsp;       -double invoiceTotal
+       -double invoiceTotal
 
-&nbsp;       +Invoice(int invoiceNumber)
+       +Invoice(int invoiceNumber)
 
-&nbsp;       +~Invoice()
+       +~Invoice()
 
-&nbsp;       +void add(int quantity, Product product)
+       +void add(int quantity, Product product)
 
-&nbsp;       +void print() const
+       +void print() const
 
-&nbsp;   }
+   }
 
-&nbsp;   
+  
 
-&nbsp;   class Main {
+   class Main {
 
-&nbsp;       <<main>>
+       <<main>>
 
-&nbsp;       +int main()
+      +int main()
 
-&nbsp;   }
+   }
 
-&nbsp;  
+ 
 
-&nbsp;   Invoice --> Product : uses
+   Invoice --> Product : uses
 
-&nbsp;   Main --> Product : creates
+   Main --> Product : creates
 
-&nbsp;   Main --> Invoice : creates
+   Main --> Invoice : creates
 
-&nbsp;   Main --> Company : includes
-'''
+   Main --> Company : includes
+```
