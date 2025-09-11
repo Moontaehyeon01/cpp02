@@ -29,5 +29,5 @@ int main()
 	pokemon = new Pikachu();
 	pokemon->attack();
 	delete pokemon;
-	return 0;s
+	return 0;
 }
