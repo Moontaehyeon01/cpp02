@@ -6,13 +6,13 @@ using namespace std;
 class Pokemon
 {
 public:
-	void attack() const { cout << "Attack!" << endl; }
+	virtual void attack() const { cout << "Attack!" << endl; }
 };
 
 class Pikachu : public Pokemon // is-a
 {
 public:
-	void attack() const { cout << "Electric Attack!!" << endl; }
+	virtual void attack() const { cout << "Electric Attack!!" << endl; }
 };
 int main()
 {
