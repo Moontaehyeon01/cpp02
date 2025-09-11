@@ -1,17 +1,17 @@
-## Pokemon Class Inheritance Diagram
 ```mermaid
+
 classDiagram
     class Pokemon {
         +Pokemon()
-        +~Pokemon()
-        +attack() const
+        +~Pokemon() virtual
+        +attack() virtual void
     }
     
     class Pikachu {
         +Pikachu()
         +~Pikachu()
-        +attack() const
+        +attack() void
     }
     
-    Pokemon <|-- Pikachu : inherits
+    Pokemon <|-- Pikachu : inheritance
    ```
