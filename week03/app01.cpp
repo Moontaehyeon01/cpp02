@@ -7,7 +7,7 @@ class Pokemon
 {
 public:
 	Pokemon() { cout << "Default(Pokemon) constructor\n"; }
-	~Pokemon() { cout << "Base class(Pokemon) destructor\n"; }
+	virtual ~Pokemon() { cout << "Base class(Pokemon) destructor\n"; }
 	virtual void attack() const { cout << "Attack!" << endl; }
 };
 
