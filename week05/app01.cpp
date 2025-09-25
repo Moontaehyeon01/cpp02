@@ -5,7 +5,7 @@ using namespace std;
 
 class Animal {
 public:
-	void makeSound() { cout << "동물이 소리를 냅니다~\n"; }
+	virtual void makeSound() { cout << "동물이 소리를 냅니다~\n"; }
 };
 class Dog : public Animal {
 public:
@@ -18,15 +18,15 @@ public:
 
 int main()
 {
-	Animal* pa = new Animal;
+	Animal* pa = new Dog(); // upcasting, oldstyle (C style)
 	pa->makeSound();
-	delete pa;
-	pa = nullptr;
 
-	pa = new Dog();
-	pa->makeSound();
-	delete pa;
-	pa = nullptr;
+	// Both results are same.
+	//Dog* pd = (Dog*)pa; // downcasting, oldstyle (C style)
+	Dog* pd = dynamic_cast<Dog*>(pa);//downcasting, modern style (C++11)
+	pd->makeSound();
+	delete pd;
+	pd = nullptr;
 
 	return 0;
 }
