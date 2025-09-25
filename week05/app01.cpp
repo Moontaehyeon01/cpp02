@@ -2,10 +2,10 @@
 #include <string>
 #include <typeinfo> 
 using namespace std;
-class Animal {
+class Animal { // abstract class
 public:
 	//virtual void makeSound() { cout << "동물이 소리를 냅니다...\n"; }
-	virtual void makeSound() = 0; 
+	virtual void makeSound() = 0; // pure virtual function
 };
 class Dog : public Animal {
 public:
