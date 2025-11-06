@@ -4,14 +4,22 @@ using namespace std;
 
 DynamicArray::DynamicArray()
 {
-
 }
 
 DynamicArray::DynamicArray(int size):size(size) // 초기화리스트 -> :size(size)
 {
-	//this->size = size; // this 대신 초기화 리스트 사용가능
-	cout << "동적배열 생성됨\n";
-	ptr = new int[size];
+	try {
+		//this->size = size; // this 대신 초기화 리스트 사용가능
+		ptr = new int[size];
+		cout << "동적배열 생성됨\n";
+		throw "4885\n";
+	}
+	catch (...) {
+		delete[] ptr;
+		cout << "힙메모리 해제(생성자 안쪽)\n";
+
+		throw;
+	}
 }
 
 DynamicArray::~DynamicArray()
@@ -22,6 +30,8 @@ DynamicArray::~DynamicArray()
 
 int DynamicArray::getAt(int index)
 {
+	if (index >= size || index < 0)
+		throw 1;
 	return ptr[index];
 }
 
