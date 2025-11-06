@@ -7,15 +7,16 @@ DynamicArray::DynamicArray()
 
 }
 
-DynamicArray::DynamicArray(int size)
+DynamicArray::DynamicArray(int size):size(size) // 초기화리스트 -> :size(size)
 {
-	cout << "동적 배열 생성됨\n";
+	//this->size = size; // this 대신 초기화 리스트 사용가능
+	cout << "동적배열 생성됨\n";
 	ptr = new int[size];
 }
 
 DynamicArray::~DynamicArray()
 {
-	cout << "동적 배열 메모리 해제\n";
+	cout << "동적배열 메모리 해제\n";
 	delete[] ptr;
 }
 
@@ -26,5 +27,8 @@ int DynamicArray::getAt(int index)
 
 void DynamicArray::setAt(int index, int value)
 {
+	//if (index < size && index >= 0)
+	if (index >= size || index < 0)
+		throw 0;
 	ptr[index] = value;
 }
