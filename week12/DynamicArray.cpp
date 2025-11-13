@@ -1,0 +1,45 @@
+#include <iostream>
+#include "DynamicArray.h"
+#include "MyException.h"
+using namespace std;
+
+DynamicArray::DynamicArray()
+{
+}
+
+DynamicArray::DynamicArray(int size):size(size) // 초기화리스트 -> :size(size)
+{
+	try {
+		//this->size = size; // this 대신 초기화 리스트 사용가능
+		ptr = new int[size];
+		cout << "동적배열 생성됨\n";
+		throw "4885\n";
+	}
+	catch (...) {
+		delete[] ptr;
+		cout << "힙메모리 해제(생성자 안쪽)\n";
+
+		throw;
+	}
+}
+
+DynamicArray::~DynamicArray()
+{
+	cout << "동적배열 메모리 해제\n";
+	delete[] ptr;
+}
+
+int DynamicArray::getAt(int index)
+{
+	if (index >= size || index < 0)
+		throw MyException(4885, "인덱스 범위를 벗어났습니다\n", this);
+	return ptr[index];
+}
+
+void DynamicArray::setAt(int index, int value)
+{
+	//if (index < size && index >= 0)
+	if (index >= size || index < 0)
+		throw 0;
+	ptr[index] = value;
+}
